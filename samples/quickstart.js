@@ -13,12 +13,11 @@
 
 'use strict';
 
-async function main() {
+async function main(projectId = 'my-project') {
   // [START nodejs_storage_transfer_quickstart]
   // Imports the Google Cloud client library
 
   // remove this line after package is released
-  // eslint-disable-next-line node/no-missing-require
   const {
     StorageTransferServiceClient,
   } = require('@google-cloud/storage-transfer');
@@ -27,19 +26,21 @@ async function main() {
   // const projectId = 'my-project'
 
   // Creates a client
-  // eslint-disable-next-line no-unused-vars
-  const client = new {StorageTransferServiceClient}();
+  const client = new StorageTransferServiceClient();
 
-  //TODO(library generator): write the actual function you will be testing
-  async function doSomething() {
-    console.log(
-      'DPE! Change this code so that it shows how to use the library! See comments below on structure.'
-    );
-    // const [thing] = await client.methodName({
-    // });
-    // console.info(thing);
+  async function listTransferJobs() {
+    const iterable = client.listTransferJobsAsync({
+      filter: JSON.stringify({
+        projectId,
+        jobNames: ['transferJobs/*'],
+      }),
+    });
+    for await (const response of iterable) {
+      // process response
+      console.info(response);
+    }
   }
-  doSomething();
+  listTransferJobs();
   // [END nodejs_storage_transfer_quickstart]
 }
 
