@@ -2,7 +2,7 @@
   "name": "@google-cloud/storage-transfer",
   "version": "0.1.0",
   "description": "storagetransfer client for Node.js",
-  "repository": "googleapis/googleapis/nodejs-storage-transfer",
+  "repository": "googleapis/nodejs-storage-transfer",
   "license": "Apache-2.0",
   "author": "Google LLC",
   "main": "build/src/index.js",
