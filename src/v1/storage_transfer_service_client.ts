@@ -404,6 +404,10 @@ export class StorageTransferServiceClient {
    *   for more details and examples.
    * @example
    * const [response] = await client.getGoogleServiceAccount(request);
+   *
+   * @example <caption>include:samples/generated/v1/storage_transfer_service.get_google_service_account.js</caption>
+   * region_tag:storagetransfer_get_google_service_account_sample
+   *
    */
   getGoogleServiceAccount(
     request?: protos.google.storagetransfer.v1.IGetGoogleServiceAccountRequest,
@@ -502,6 +506,10 @@ export class StorageTransferServiceClient {
    *   for more details and examples.
    * @example
    * const [response] = await client.createTransferJob(request);
+   *
+   * @example <caption>include:samples/generated/v1/storage_transfer_service.create_transfer_job.js</caption>
+   * region_tag:storagetransfer_create_transfer_job_sample
+   *
    */
   createTransferJob(
     request?: protos.google.storagetransfer.v1.ICreateTransferJobRequest,
@@ -620,6 +628,10 @@ export class StorageTransferServiceClient {
    *   for more details and examples.
    * @example
    * const [response] = await client.updateTransferJob(request);
+   *
+   * @example <caption>include:samples/generated/v1/storage_transfer_service.update_transfer_job.js</caption>
+   * region_tag:storagetransfer_update_transfer_job_sample
+   *
    */
   updateTransferJob(
     request?: protos.google.storagetransfer.v1.IUpdateTransferJobRequest,
@@ -715,6 +727,10 @@ export class StorageTransferServiceClient {
    *   for more details and examples.
    * @example
    * const [response] = await client.getTransferJob(request);
+   *
+   * @example <caption>include:samples/generated/v1/storage_transfer_service.get_transfer_job.js</caption>
+   * region_tag:storagetransfer_get_transfer_job_sample
+   *
    */
   getTransferJob(
     request?: protos.google.storagetransfer.v1.IGetTransferJobRequest,
@@ -809,6 +825,10 @@ export class StorageTransferServiceClient {
    *   for more details and examples.
    * @example
    * const [response] = await client.pauseTransferOperation(request);
+   *
+   * @example <caption>include:samples/generated/v1/storage_transfer_service.pause_transfer_operation.js</caption>
+   * region_tag:storagetransfer_pause_transfer_operation_sample
+   *
    */
   pauseTransferOperation(
     request?: protos.google.storagetransfer.v1.IPauseTransferOperationRequest,
@@ -910,6 +930,10 @@ export class StorageTransferServiceClient {
    *   for more details and examples.
    * @example
    * const [response] = await client.resumeTransferOperation(request);
+   *
+   * @example <caption>include:samples/generated/v1/storage_transfer_service.resume_transfer_operation.js</caption>
+   * region_tag:storagetransfer_resume_transfer_operation_sample
+   *
    */
   resumeTransferOperation(
     request?: protos.google.storagetransfer.v1.IResumeTransferOperationRequest,
@@ -1022,6 +1046,10 @@ export class StorageTransferServiceClient {
    * @example
    * const [operation] = await client.runTransferJob(request);
    * const [response] = await operation.promise();
+   *
+   * @example <caption>include:samples/generated/v1/storage_transfer_service.run_transfer_job.js</caption>
+   * region_tag:storagetransfer_run_transfer_job_sample
+   *
    */
   runTransferJob(
     request?: protos.google.storagetransfer.v1.IRunTransferJobRequest,
@@ -1085,6 +1113,10 @@ export class StorageTransferServiceClient {
    * console.log(decodedOperation.result);
    * console.log(decodedOperation.done);
    * console.log(decodedOperation.metadata);
+   *
+   * @example <caption>include:samples/generated/v1/storage_transfer_service.run_transfer_job.js</caption>
+   * region_tag:storagetransfer_run_transfer_job_sample
+   *
    */
   async checkRunTransferJobProgress(
     name: string
@@ -1173,6 +1205,10 @@ export class StorageTransferServiceClient {
    *   Please see the
    *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
    *   for more details and examples.
+   *
+   * @example <caption>include:samples/generated/v1/storage_transfer_service.list_transfer_jobs.js</caption>
+   * region_tag:storagetransfer_list_transfer_jobs_sample
+   *
    */
   listTransferJobs(
     request?: protos.google.storagetransfer.v1.IListTransferJobsRequest,
@@ -1244,6 +1280,10 @@ export class StorageTransferServiceClient {
    *   Please see the
    *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
    *   for more details and examples.
+   *
+   * @example <caption>include:samples/generated/v1/storage_transfer_service.list_transfer_jobs.js</caption>
+   * region_tag:storagetransfer_list_transfer_jobs_sample
+   *
    */
   listTransferJobsStream(
     request?: protos.google.storagetransfer.v1.IListTransferJobsRequest,
@@ -1251,7 +1291,8 @@ export class StorageTransferServiceClient {
   ): Transform {
     request = request || {};
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listTransferJobs'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listTransferJobs.createStream(
       this.innerApiCalls.listTransferJobs as gax.GaxCall,
@@ -1298,6 +1339,10 @@ export class StorageTransferServiceClient {
    * for await (const response of iterable) {
    *   // process response
    * }
+   *
+   * @example <caption>include:samples/generated/v1/storage_transfer_service.list_transfer_jobs.js</caption>
+   * region_tag:storagetransfer_list_transfer_jobs_sample
+   *
    */
   listTransferJobsAsync(
     request?: protos.google.storagetransfer.v1.IListTransferJobsRequest,
@@ -1306,7 +1351,8 @@ export class StorageTransferServiceClient {
     request = request || {};
     options = options || {};
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listTransferJobs'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listTransferJobs.asyncIterate(
       this.innerApiCalls['listTransferJobs'] as GaxCall,

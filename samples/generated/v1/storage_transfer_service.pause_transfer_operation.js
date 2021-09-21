@@ -12,11 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
 'use strict';
 
 function main(name) {
-  // [START storagetransfer_resume_transfer_operation_sample]
+  // [START storagetransfer_pause_transfer_operation_sample]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -26,24 +25,27 @@ function main(name) {
   // const name = 'abc123'
 
   // Imports the Storagetransfer library
-  const {StorageTransferServiceClient} = require('@google-cloud/storage-transfer').v1;
+  const {StorageTransferServiceClient} =
+    require('@google-cloud/storage-transfer').v1;
 
   // Instantiates a client
   const storagetransferClient = new StorageTransferServiceClient();
 
-  async function resumeTransferOperation() {
+  async function pauseTransferOperation() {
     // Construct request
     const request = {
       name,
     };
 
     // Run request
-    const response = await storagetransferClient.resumeTransferOperation(request);
+    const response = await storagetransferClient.pauseTransferOperation(
+      request
+    );
     console.log(response);
   }
 
-  resumeTransferOperation();
-  // [END storagetransfer_resume_transfer_operation_sample]
+  pauseTransferOperation();
+  // [END storagetransfer_pause_transfer_operation_sample]
 }
 
 process.on('unhandledRejection', err => {
