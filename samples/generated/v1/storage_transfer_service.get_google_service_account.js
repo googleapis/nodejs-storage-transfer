@@ -12,38 +12,41 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
 'use strict';
 
-function main(name) {
-  // [START storagetransfer_v1_generated_StorageTransferService_ResumeTransferOperation_async]
+function main(projectId) {
+  // [START storagetransfer_v1_generated_StorageTransferService_GetGoogleServiceAccount_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. The name of the transfer operation.
+   *  Required. The ID of the Google Cloud Platform Console project that the
+   *  Google service account is associated with.
    */
-  // const name = 'abc123'
+  // const projectId = 'abc123'
 
   // Imports the Storagetransfer library
-  const {StorageTransferServiceClient} = require('@google-cloud/storage-transfer').v1;
+  const {StorageTransferServiceClient} =
+    require('@google-cloud/storage-transfer').v1;
 
   // Instantiates a client
   const storagetransferClient = new StorageTransferServiceClient();
 
-  async function resumeTransferOperation() {
+  async function getGoogleServiceAccount() {
     // Construct request
     const request = {
-      name,
+      projectId,
     };
 
     // Run request
-    const response = await storagetransferClient.resumeTransferOperation(request);
+    const response = await storagetransferClient.getGoogleServiceAccount(
+      request
+    );
     console.log(response);
   }
 
-  resumeTransferOperation();
-  // [END storagetransfer_v1_generated_StorageTransferService_ResumeTransferOperation_async]
+  getGoogleServiceAccount();
+  // [END storagetransfer_v1_generated_StorageTransferService_GetGoogleServiceAccount_async]
 }
 
 process.on('unhandledRejection', err => {

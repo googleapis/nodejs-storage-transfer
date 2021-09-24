@@ -1251,7 +1251,8 @@ export class StorageTransferServiceClient {
   ): Transform {
     request = request || {};
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listTransferJobs'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listTransferJobs.createStream(
       this.innerApiCalls.listTransferJobs as gax.GaxCall,
@@ -1306,7 +1307,8 @@ export class StorageTransferServiceClient {
     request = request || {};
     options = options || {};
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listTransferJobs'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listTransferJobs.asyncIterate(
       this.innerApiCalls['listTransferJobs'] as GaxCall,
