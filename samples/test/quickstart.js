@@ -39,8 +39,8 @@ const sourceBucket = storage.bucket(sourceBucketName);
 const sinkBucket = storage.bucket(sinkBucketName);
 
 after(async () => {
-	await sourceBucket.delete().catch(console.error);
-    await sinkBucket.delete().catch(console.error);
+  await sourceBucket.delete().catch(console.error);
+  await sinkBucket.delete().catch(console.error);
 });
 
 describe('Quickstart', () => {
@@ -53,16 +53,16 @@ describe('Quickstart', () => {
   });
 
   async function grantStsPermissions(projectId, bucket) {
-  	const request = {projectId: projectId};
-  	const serviceAccount = await client.getGoogleServiceAccount(request);
-  	const email = serviceAccount[0].accountEmail;
+    const request = {projectId: projectId};
+    const serviceAccount = await client.getGoogleServiceAccount(request);
+    const email = serviceAccount[0].accountEmail;
 
-    const objectViewer = "roles/storage.objectViewer";
-    const bucketReader ="roles/storage.legacyBucketReader";
-    const bucketWriter = "roles/storage.legacyBucketWriter";
-    const members = ["serviceAccount:" + email];
+    const objectViewer = 'roles/storage.objectViewer';
+    const bucketReader = 'roles/storage.legacyBucketReader';
+    const bucketWriter = 'roles/storage.legacyBucketWriter';
+    const members = ['serviceAccount:' + email];
 
-  	const [policy] = await bucket.iam.getPolicy({requestedPolicyVersion: 3});
+    const [policy] = await bucket.iam.getPolicy({requestedPolicyVersion: 3});
 
     policy.bindings.push({
       role: objectViewer,
@@ -83,21 +83,24 @@ describe('Quickstart', () => {
   }
 
   it('should run quickstart', async () => {
-  	await grantStsPermissions(projectId, sourceBucket);
-  	await grantStsPermissions(projectId, sinkBucket);
-    const output = execSync(`node ./quickstart.js ${projectId} ${sourceBucketName} ${sinkBucketName}`, {cwd});
+    await grantStsPermissions(projectId, sourceBucket);
+    await grantStsPermissions(projectId, sinkBucket);
+    const output = execSync(
+      `node ./quickstart.js ${projectId} ${sourceBucketName} ${sinkBucketName}`,
+      {cwd}
+    );
     console.log(output);
-    assert.include(output, "transferJobs/");
+    assert.include(output, 'transferJobs/');
 
     // If it ran successfully and a job was created, delete it to clean up
     const transferJobName = output.match(/transferJobs.*/)[0];
     const deleteRequest = {
-    	projectId:    projectId,
-    	jobName:      transferJobName,
-    	transferJob : {
-    		name:    transferJobName,
-    		status: 'DELETED'
-    	}
+      projectId: projectId,
+      jobName: transferJobName,
+      transferJob: {
+        name: transferJobName,
+        status: 'DELETED',
+      },
     };
     await client.updateTransferJob(deleteRequest);
   });
