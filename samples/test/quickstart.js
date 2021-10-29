@@ -25,10 +25,7 @@ const {Storage} = require('@google-cloud/storage');
 const {
   StorageTransferServiceClient,
 } = require('@google-cloud/storage-transfer');
-const { 
-  v4: uuidv4,
-} = require('uuid');
-
+const {v4: uuidv4} = require('uuid');
 
 const execSync = cmd => cp.execSync(cmd, {encoding: 'utf-8'});
 
