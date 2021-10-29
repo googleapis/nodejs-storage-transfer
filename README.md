@@ -59,7 +59,7 @@ npm install @google-cloud/storage-transfer
 
 ```javascript
 
- /**
+/**
  * TODO(developer): Uncomment the following lines before running the sample.
  */
 // Your project id
@@ -70,7 +70,6 @@ npm install @google-cloud/storage-transfer
 
 // The ID of the GCS bucket to transfer data to
 // const gcsSinkBucket = 'my-sink-bucket'
-
 
 // Imports the Google Cloud client library
 const {
@@ -88,10 +87,10 @@ async function quickstart() {
       projectId: projectId,
       transferSpec: {
         gcsDataSource: {bucketName: gcsSourceBucket},
-        gcsDataSink:   {bucketName: gcsSinkBucket}
+        gcsDataSink: {bucketName: gcsSinkBucket},
       },
-      status: 'ENABLED'
-    } 
+      status: 'ENABLED',
+    },
   };
 
   // Runs the request and creates the job
@@ -100,12 +99,14 @@ async function quickstart() {
   const jobName = response[0].name;
 
   const runRequest = {
-    jobName:   jobName,
-    projectId: projectId
-  }
+    jobName: jobName,
+    projectId: projectId,
+  };
   await client.runTransferJob(runRequest);
 
-  console.log(`Created and ran a transfer job from ${gcsSourceBucket} to ${gcsSinkBucket} with name ${jobName}`);
+  console.log(
+    `Created and ran a transfer job from ${gcsSourceBucket} to ${gcsSinkBucket} with name ${jobName}`
+  );
 }
 
 quickstart();
