@@ -12,38 +12,45 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
 'use strict';
 
-function main(transferJob) {
-  // [START storagetransfer_v1_generated_StorageTransferService_CreateTransferJob_async]
+function main(jobName, projectId) {
+  // [START storagetransfer_v1_generated_StorageTransferService_GetTransferJob_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. The job to create.
+   *  Required.
+   *  The job to get.
    */
-  // const transferJob = {}
+  // const jobName = 'abc123'
+  /**
+   *  Required. The ID of the Google Cloud Platform Console project that owns the
+   *  job.
+   */
+  // const projectId = 'abc123'
 
   // Imports the Storagetransfer library
-  const {StorageTransferServiceClient} = require('@google-cloud/storage-transfer').v1;
+  const {StorageTransferServiceClient} =
+    require('@google-cloud/storage-transfer').v1;
 
   // Instantiates a client
   const storagetransferClient = new StorageTransferServiceClient();
 
-  async function callCreateTransferJob() {
+  async function callGetTransferJob() {
     // Construct request
     const request = {
-      transferJob,
+      jobName,
+      projectId,
     };
 
     // Run request
-    const response = await storagetransferClient.createTransferJob(request);
+    const response = await storagetransferClient.getTransferJob(request);
     console.log(response);
   }
 
-  callCreateTransferJob();
-  // [END storagetransfer_v1_generated_StorageTransferService_CreateTransferJob_async]
+  callGetTransferJob();
+  // [END storagetransfer_v1_generated_StorageTransferService_GetTransferJob_async]
 }
 
 process.on('unhandledRejection', err => {
