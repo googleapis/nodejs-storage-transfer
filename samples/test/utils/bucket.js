@@ -16,6 +16,7 @@
 
 'use strict';
 
+// eslint-disable-next-line no-unused-vars
 const {Storage, Bucket} = require('@google-cloud/storage');
 const {
   StorageTransferServiceClient,
@@ -24,23 +25,25 @@ const AWS = require('aws-sdk');
 const uuid = require('uuid');
 
 class BucketManager {
-  client = new StorageTransferServiceClient();
-  s3 = new AWS.S3({apiVersion: '2006-03-01'});
-  storage = new Storage();
+  constructor() {
+    this.client = new StorageTransferServiceClient();
+    this.s3 = new AWS.S3({apiVersion: '2006-03-01'});
+    this.storage = new Storage();
 
-  /**
-   * The GCP Project ID. Cached after initial request
-   */
-  _cachedProjectId = '';
+    /**
+     * The GCP Project ID. Cached after initial request
+     */
+    this._cachedProjectId = '';
 
-  /**
-   * @type {Bucket[]}
-   */
-  gcsBuckets = [];
-  /**
-   * @type {string[]}
-   */
-  s3Buckets = [];
+    /**
+     * @type {Bucket[]}
+     */
+    this.gcsBuckets = [];
+    /**
+     * @type {string[]}
+     */
+    this.s3Buckets = [];
+  }
 
   async getProjectId() {
     if (!this._cachedProjectId) {
@@ -62,7 +65,6 @@ class BucketManager {
   /**
    * Configures permissions for STS to read/write to the bucket.
    *
-   * @param {string} projectId
    * @param {Bucket} bucket
    */
   async grantSTSPermissions(bucket) {

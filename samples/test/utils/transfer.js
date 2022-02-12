@@ -23,15 +23,17 @@ const {
 const {BucketManager} = require('./bucket');
 
 class TransferJobManager {
-  bucketManager = new BucketManager();
-  client = new StorageTransferServiceClient();
+  constructor() {
+    this.bucketManager = new BucketManager();
+    this.client = new StorageTransferServiceClient();
 
-  /**
-   * List of transferJobs to delete
-   *
-   * @type {string[]}
-   */
-  transferJobsToCleanup = [];
+    /**
+     * List of transferJobs to delete
+     *
+     * @type {string[]}
+     */
+    this.transferJobsToCleanup = [];
+  }
 
   /**
    * Clean up transfer jobs used for testing.
@@ -82,14 +84,14 @@ class TransferJobManager {
   /**
    * Deletes a STS transfer job.
    *
-   * @param {string} transferJobName the name of the STS Job to delete
+   * @param {string} jobName the name of the STS Job to delete
    */
-  async deleteTransferJob(transferJobName) {
+  async deleteTransferJob(jobName) {
     await this.client.updateTransferJob({
       projectId: await this.client.getProjectId(),
-      jobName: transferJobName,
+      jobName,
       transferJob: {
-        name: transferJobName,
+        name: jobName,
         status: 'DELETED',
       },
     });
@@ -98,7 +100,7 @@ class TransferJobManager {
   /**
    * Adds Transfer Job to queue for easy clean-up via {#cleanUp}.
    *
-   * @param {string} jobName
+   * @param {string} jobName the name of the STS Job to queue
    */
   transferJobToCleanUp(jobName) {
     this.transferJobsToCleanup.push(jobName);
