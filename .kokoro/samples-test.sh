@@ -22,10 +22,6 @@ export NPM_CONFIG_PREFIX=${HOME}/.npm-global
 export GOOGLE_APPLICATION_CREDENTIALS=${KOKORO_GFILE_DIR}/service-account.json
 export GCLOUD_PROJECT=long-door-651
 
-# Import secrets for AWS integration testing.
-export AWS_ACCESS_KEY_ID=`gcloud secrets versions access latest --project cloud-devrel-kokoro-resources --secret=nodejs-cloud-integration-aws-access-key-id`
-export AWS_SECRET_ACCESS_KEY=`gcloud secrets versions access latest --project cloud-devrel-kokoro-resources --secret=nodejs-cloud-integration-aws-secret-access-key`
-
 cd $(dirname $0)/..
 
 # Run a pre-test hook, if a pre-samples-test.sh is in the project
