@@ -21,10 +21,11 @@
 const {assert} = require('chai');
 const {after, before, describe, it} = require('mocha');
 
-const {TestBucketManager, runSample} = require('./tools');
+const {BucketManager, TransferJobManager, runSample} = require('./utils');
 
 describe('quickstart', () => {
-  const testBucketManager = new TestBucketManager();
+  const testBucketManager = new BucketManager();
+  const testTransferJobManager = new TransferJobManager();
 
   let projectId;
   let sourceBucket;
@@ -32,20 +33,20 @@ describe('quickstart', () => {
 
   before(async () => {
     projectId = await testBucketManager.getProjectId();
-
-    sourceBucket = await testBucketManager.generateGCSBucket();
-    sinkBucket = await testBucketManager.generateGCSBucket();
+    sourceBucket = (await testBucketManager.generateGCSBucket()).name;
+    sinkBucket = (await testBucketManager.generateGCSBucket()).name;
   });
 
   after(async () => {
     await testBucketManager.deleteBuckets();
+    await testTransferJobManager.cleanUp();
   });
 
   it('should run quickstart', async () => {
     const output = await runSample('quickstart', [
       projectId,
-      sourceBucket.name,
-      sinkBucket.name,
+      sourceBucket,
+      sinkBucket,
     ]);
 
     assert.include(output, 'transferJobs/');
@@ -53,6 +54,6 @@ describe('quickstart', () => {
     // If it ran successfully and a job was created, delete it to clean up
     const [jobName] = output.match(/transferJobs.*/);
 
-    await testBucketManager.deleteTransferJob(jobName);
+    testTransferJobManager.transferJobToCleanUp(jobName);
   });
 });
