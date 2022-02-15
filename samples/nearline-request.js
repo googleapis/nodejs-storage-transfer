@@ -105,10 +105,7 @@ main(
   gcsSourceBucket,
   gcsSinkBucket,
   new Date(startDate)
-).catch(err => {
-  console.error(err);
-  process.exitCode = 1;
-});
+);
 
 process.on('unhandledRejection', err => {
   console.error(err);

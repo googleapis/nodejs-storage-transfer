@@ -71,10 +71,7 @@ async function main(projectId, jobName, maxRetryDelayMillis) {
 
 const [projectId, jobName, maxRetryDelayMillis] = [...process.argv.slice(2)];
 
-main(projectId, jobName, Number.parseInt(maxRetryDelayMillis)).catch(err => {
-  console.error(err);
-  process.exitCode = 1;
-});
+main(projectId, jobName, Number.parseInt(maxRetryDelayMillis));
 
 process.on('unhandledRejection', err => {
   console.error(err);
