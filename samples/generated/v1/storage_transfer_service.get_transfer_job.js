@@ -26,12 +26,11 @@ function main(jobName, projectId) {
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required.
-   *  The job to get.
+   *  Required. The job to get.
    */
   // const jobName = 'abc123'
   /**
-   *  Required. The ID of the Google Cloud Platform Console project that owns the
+   *  Required. The ID of the Google Cloud project that owns the
    *  job.
    */
   // const projectId = 'abc123'
