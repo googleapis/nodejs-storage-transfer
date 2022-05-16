@@ -90,7 +90,7 @@
                     };
     
                     /**
-                     * Callback as used by {@link google.storagetransfer.v1.StorageTransferService|getGoogleServiceAccount}.
+                     * Callback as used by {@link google.storagetransfer.v1.StorageTransferService#getGoogleServiceAccount}.
                      * @memberof google.storagetransfer.v1.StorageTransferService
                      * @typedef GetGoogleServiceAccountCallback
                      * @type {function}
@@ -123,7 +123,7 @@
                      */
     
                     /**
-                     * Callback as used by {@link google.storagetransfer.v1.StorageTransferService|createTransferJob}.
+                     * Callback as used by {@link google.storagetransfer.v1.StorageTransferService#createTransferJob}.
                      * @memberof google.storagetransfer.v1.StorageTransferService
                      * @typedef CreateTransferJobCallback
                      * @type {function}
@@ -156,7 +156,7 @@
                      */
     
                     /**
-                     * Callback as used by {@link google.storagetransfer.v1.StorageTransferService|updateTransferJob}.
+                     * Callback as used by {@link google.storagetransfer.v1.StorageTransferService#updateTransferJob}.
                      * @memberof google.storagetransfer.v1.StorageTransferService
                      * @typedef UpdateTransferJobCallback
                      * @type {function}
@@ -189,7 +189,7 @@
                      */
     
                     /**
-                     * Callback as used by {@link google.storagetransfer.v1.StorageTransferService|getTransferJob}.
+                     * Callback as used by {@link google.storagetransfer.v1.StorageTransferService#getTransferJob}.
                      * @memberof google.storagetransfer.v1.StorageTransferService
                      * @typedef GetTransferJobCallback
                      * @type {function}
@@ -222,7 +222,7 @@
                      */
     
                     /**
-                     * Callback as used by {@link google.storagetransfer.v1.StorageTransferService|listTransferJobs}.
+                     * Callback as used by {@link google.storagetransfer.v1.StorageTransferService#listTransferJobs}.
                      * @memberof google.storagetransfer.v1.StorageTransferService
                      * @typedef ListTransferJobsCallback
                      * @type {function}
@@ -255,7 +255,7 @@
                      */
     
                     /**
-                     * Callback as used by {@link google.storagetransfer.v1.StorageTransferService|pauseTransferOperation}.
+                     * Callback as used by {@link google.storagetransfer.v1.StorageTransferService#pauseTransferOperation}.
                      * @memberof google.storagetransfer.v1.StorageTransferService
                      * @typedef PauseTransferOperationCallback
                      * @type {function}
@@ -288,7 +288,7 @@
                      */
     
                     /**
-                     * Callback as used by {@link google.storagetransfer.v1.StorageTransferService|resumeTransferOperation}.
+                     * Callback as used by {@link google.storagetransfer.v1.StorageTransferService#resumeTransferOperation}.
                      * @memberof google.storagetransfer.v1.StorageTransferService
                      * @typedef ResumeTransferOperationCallback
                      * @type {function}
@@ -321,7 +321,7 @@
                      */
     
                     /**
-                     * Callback as used by {@link google.storagetransfer.v1.StorageTransferService|runTransferJob}.
+                     * Callback as used by {@link google.storagetransfer.v1.StorageTransferService#runTransferJob}.
                      * @memberof google.storagetransfer.v1.StorageTransferService
                      * @typedef RunTransferJobCallback
                      * @type {function}
@@ -354,7 +354,7 @@
                      */
     
                     /**
-                     * Callback as used by {@link google.storagetransfer.v1.StorageTransferService|createAgentPool}.
+                     * Callback as used by {@link google.storagetransfer.v1.StorageTransferService#createAgentPool}.
                      * @memberof google.storagetransfer.v1.StorageTransferService
                      * @typedef CreateAgentPoolCallback
                      * @type {function}
@@ -387,7 +387,7 @@
                      */
     
                     /**
-                     * Callback as used by {@link google.storagetransfer.v1.StorageTransferService|updateAgentPool}.
+                     * Callback as used by {@link google.storagetransfer.v1.StorageTransferService#updateAgentPool}.
                      * @memberof google.storagetransfer.v1.StorageTransferService
                      * @typedef UpdateAgentPoolCallback
                      * @type {function}
@@ -420,7 +420,7 @@
                      */
     
                     /**
-                     * Callback as used by {@link google.storagetransfer.v1.StorageTransferService|getAgentPool}.
+                     * Callback as used by {@link google.storagetransfer.v1.StorageTransferService#getAgentPool}.
                      * @memberof google.storagetransfer.v1.StorageTransferService
                      * @typedef GetAgentPoolCallback
                      * @type {function}
@@ -453,7 +453,7 @@
                      */
     
                     /**
-                     * Callback as used by {@link google.storagetransfer.v1.StorageTransferService|listAgentPools}.
+                     * Callback as used by {@link google.storagetransfer.v1.StorageTransferService#listAgentPools}.
                      * @memberof google.storagetransfer.v1.StorageTransferService
                      * @typedef ListAgentPoolsCallback
                      * @type {function}
@@ -486,7 +486,7 @@
                      */
     
                     /**
-                     * Callback as used by {@link google.storagetransfer.v1.StorageTransferService|deleteAgentPool}.
+                     * Callback as used by {@link google.storagetransfer.v1.StorageTransferService#deleteAgentPool}.
                      * @memberof google.storagetransfer.v1.StorageTransferService
                      * @typedef DeleteAgentPoolCallback
                      * @type {function}
@@ -18409,7 +18409,6 @@
                  * @property {boolean|null} [packed] FieldOptions packed
                  * @property {google.protobuf.FieldOptions.JSType|null} [jstype] FieldOptions jstype
                  * @property {boolean|null} [lazy] FieldOptions lazy
-                 * @property {boolean|null} [unverifiedLazy] FieldOptions unverifiedLazy
                  * @property {boolean|null} [deprecated] FieldOptions deprecated
                  * @property {boolean|null} [weak] FieldOptions weak
                  * @property {Array.<google.protobuf.IUninterpretedOption>|null} [uninterpretedOption] FieldOptions uninterpretedOption
@@ -18465,14 +18464,6 @@
                  * @instance
                  */
                 FieldOptions.prototype.lazy = false;
-    
-                /**
-                 * FieldOptions unverifiedLazy.
-                 * @member {boolean} unverifiedLazy
-                 * @memberof google.protobuf.FieldOptions
-                 * @instance
-                 */
-                FieldOptions.prototype.unverifiedLazy = false;
     
                 /**
                  * FieldOptions deprecated.
@@ -18550,8 +18541,6 @@
                         writer.uint32(/* id 6, wireType 0 =*/48).int32(message.jstype);
                     if (message.weak != null && Object.hasOwnProperty.call(message, "weak"))
                         writer.uint32(/* id 10, wireType 0 =*/80).bool(message.weak);
-                    if (message.unverifiedLazy != null && Object.hasOwnProperty.call(message, "unverifiedLazy"))
-                        writer.uint32(/* id 15, wireType 0 =*/120).bool(message.unverifiedLazy);
                     if (message.uninterpretedOption != null && message.uninterpretedOption.length)
                         for (var i = 0; i < message.uninterpretedOption.length; ++i)
                             $root.google.protobuf.UninterpretedOption.encode(message.uninterpretedOption[i], writer.uint32(/* id 999, wireType 2 =*/7994).fork()).ldelim();
@@ -18608,9 +18597,6 @@
                             break;
                         case 5:
                             message.lazy = reader.bool();
-                            break;
-                        case 15:
-                            message.unverifiedLazy = reader.bool();
                             break;
                         case 3:
                             message.deprecated = reader.bool();
@@ -18695,9 +18681,6 @@
                     if (message.lazy != null && message.hasOwnProperty("lazy"))
                         if (typeof message.lazy !== "boolean")
                             return "lazy: boolean expected";
-                    if (message.unverifiedLazy != null && message.hasOwnProperty("unverifiedLazy"))
-                        if (typeof message.unverifiedLazy !== "boolean")
-                            return "unverifiedLazy: boolean expected";
                     if (message.deprecated != null && message.hasOwnProperty("deprecated"))
                         if (typeof message.deprecated !== "boolean")
                             return "deprecated: boolean expected";
@@ -18783,8 +18766,6 @@
                     }
                     if (object.lazy != null)
                         message.lazy = Boolean(object.lazy);
-                    if (object.unverifiedLazy != null)
-                        message.unverifiedLazy = Boolean(object.unverifiedLazy);
                     if (object.deprecated != null)
                         message.deprecated = Boolean(object.deprecated);
                     if (object.weak != null)
@@ -18872,7 +18853,6 @@
                         object.lazy = false;
                         object.jstype = options.enums === String ? "JS_NORMAL" : 0;
                         object.weak = false;
-                        object.unverifiedLazy = false;
                         object[".google.api.resourceReference"] = null;
                     }
                     if (message.ctype != null && message.hasOwnProperty("ctype"))
@@ -18887,8 +18867,6 @@
                         object.jstype = options.enums === String ? $root.google.protobuf.FieldOptions.JSType[message.jstype] : message.jstype;
                     if (message.weak != null && message.hasOwnProperty("weak"))
                         object.weak = message.weak;
-                    if (message.unverifiedLazy != null && message.hasOwnProperty("unverifiedLazy"))
-                        object.unverifiedLazy = message.unverifiedLazy;
                     if (message.uninterpretedOption && message.uninterpretedOption.length) {
                         object.uninterpretedOption = [];
                         for (var j = 0; j < message.uninterpretedOption.length; ++j)
@@ -23001,7 +22979,7 @@
                 };
     
                 /**
-                 * Callback as used by {@link google.longrunning.Operations|listOperations}.
+                 * Callback as used by {@link google.longrunning.Operations#listOperations}.
                  * @memberof google.longrunning.Operations
                  * @typedef ListOperationsCallback
                  * @type {function}
@@ -23034,7 +23012,7 @@
                  */
     
                 /**
-                 * Callback as used by {@link google.longrunning.Operations|getOperation}.
+                 * Callback as used by {@link google.longrunning.Operations#getOperation}.
                  * @memberof google.longrunning.Operations
                  * @typedef GetOperationCallback
                  * @type {function}
@@ -23067,7 +23045,7 @@
                  */
     
                 /**
-                 * Callback as used by {@link google.longrunning.Operations|deleteOperation}.
+                 * Callback as used by {@link google.longrunning.Operations#deleteOperation}.
                  * @memberof google.longrunning.Operations
                  * @typedef DeleteOperationCallback
                  * @type {function}
@@ -23100,7 +23078,7 @@
                  */
     
                 /**
-                 * Callback as used by {@link google.longrunning.Operations|cancelOperation}.
+                 * Callback as used by {@link google.longrunning.Operations#cancelOperation}.
                  * @memberof google.longrunning.Operations
                  * @typedef CancelOperationCallback
                  * @type {function}
@@ -23133,7 +23111,7 @@
                  */
     
                 /**
-                 * Callback as used by {@link google.longrunning.Operations|waitOperation}.
+                 * Callback as used by {@link google.longrunning.Operations#waitOperation}.
                  * @memberof google.longrunning.Operations
                  * @typedef WaitOperationCallback
                  * @type {function}

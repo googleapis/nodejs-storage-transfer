@@ -229,91 +229,91 @@ export namespace google {
             namespace StorageTransferService {
 
                 /**
-                 * Callback as used by {@link google.storagetransfer.v1.StorageTransferService|getGoogleServiceAccount}.
+                 * Callback as used by {@link google.storagetransfer.v1.StorageTransferService#getGoogleServiceAccount}.
                  * @param error Error, if any
                  * @param [response] GoogleServiceAccount
                  */
                 type GetGoogleServiceAccountCallback = (error: (Error|null), response?: google.storagetransfer.v1.GoogleServiceAccount) => void;
 
                 /**
-                 * Callback as used by {@link google.storagetransfer.v1.StorageTransferService|createTransferJob}.
+                 * Callback as used by {@link google.storagetransfer.v1.StorageTransferService#createTransferJob}.
                  * @param error Error, if any
                  * @param [response] TransferJob
                  */
                 type CreateTransferJobCallback = (error: (Error|null), response?: google.storagetransfer.v1.TransferJob) => void;
 
                 /**
-                 * Callback as used by {@link google.storagetransfer.v1.StorageTransferService|updateTransferJob}.
+                 * Callback as used by {@link google.storagetransfer.v1.StorageTransferService#updateTransferJob}.
                  * @param error Error, if any
                  * @param [response] TransferJob
                  */
                 type UpdateTransferJobCallback = (error: (Error|null), response?: google.storagetransfer.v1.TransferJob) => void;
 
                 /**
-                 * Callback as used by {@link google.storagetransfer.v1.StorageTransferService|getTransferJob}.
+                 * Callback as used by {@link google.storagetransfer.v1.StorageTransferService#getTransferJob}.
                  * @param error Error, if any
                  * @param [response] TransferJob
                  */
                 type GetTransferJobCallback = (error: (Error|null), response?: google.storagetransfer.v1.TransferJob) => void;
 
                 /**
-                 * Callback as used by {@link google.storagetransfer.v1.StorageTransferService|listTransferJobs}.
+                 * Callback as used by {@link google.storagetransfer.v1.StorageTransferService#listTransferJobs}.
                  * @param error Error, if any
                  * @param [response] ListTransferJobsResponse
                  */
                 type ListTransferJobsCallback = (error: (Error|null), response?: google.storagetransfer.v1.ListTransferJobsResponse) => void;
 
                 /**
-                 * Callback as used by {@link google.storagetransfer.v1.StorageTransferService|pauseTransferOperation}.
+                 * Callback as used by {@link google.storagetransfer.v1.StorageTransferService#pauseTransferOperation}.
                  * @param error Error, if any
                  * @param [response] Empty
                  */
                 type PauseTransferOperationCallback = (error: (Error|null), response?: google.protobuf.Empty) => void;
 
                 /**
-                 * Callback as used by {@link google.storagetransfer.v1.StorageTransferService|resumeTransferOperation}.
+                 * Callback as used by {@link google.storagetransfer.v1.StorageTransferService#resumeTransferOperation}.
                  * @param error Error, if any
                  * @param [response] Empty
                  */
                 type ResumeTransferOperationCallback = (error: (Error|null), response?: google.protobuf.Empty) => void;
 
                 /**
-                 * Callback as used by {@link google.storagetransfer.v1.StorageTransferService|runTransferJob}.
+                 * Callback as used by {@link google.storagetransfer.v1.StorageTransferService#runTransferJob}.
                  * @param error Error, if any
                  * @param [response] Operation
                  */
                 type RunTransferJobCallback = (error: (Error|null), response?: google.longrunning.Operation) => void;
 
                 /**
-                 * Callback as used by {@link google.storagetransfer.v1.StorageTransferService|createAgentPool}.
+                 * Callback as used by {@link google.storagetransfer.v1.StorageTransferService#createAgentPool}.
                  * @param error Error, if any
                  * @param [response] AgentPool
                  */
                 type CreateAgentPoolCallback = (error: (Error|null), response?: google.storagetransfer.v1.AgentPool) => void;
 
                 /**
-                 * Callback as used by {@link google.storagetransfer.v1.StorageTransferService|updateAgentPool}.
+                 * Callback as used by {@link google.storagetransfer.v1.StorageTransferService#updateAgentPool}.
                  * @param error Error, if any
                  * @param [response] AgentPool
                  */
                 type UpdateAgentPoolCallback = (error: (Error|null), response?: google.storagetransfer.v1.AgentPool) => void;
 
                 /**
-                 * Callback as used by {@link google.storagetransfer.v1.StorageTransferService|getAgentPool}.
+                 * Callback as used by {@link google.storagetransfer.v1.StorageTransferService#getAgentPool}.
                  * @param error Error, if any
                  * @param [response] AgentPool
                  */
                 type GetAgentPoolCallback = (error: (Error|null), response?: google.storagetransfer.v1.AgentPool) => void;
 
                 /**
-                 * Callback as used by {@link google.storagetransfer.v1.StorageTransferService|listAgentPools}.
+                 * Callback as used by {@link google.storagetransfer.v1.StorageTransferService#listAgentPools}.
                  * @param error Error, if any
                  * @param [response] ListAgentPoolsResponse
                  */
                 type ListAgentPoolsCallback = (error: (Error|null), response?: google.storagetransfer.v1.ListAgentPoolsResponse) => void;
 
                 /**
-                 * Callback as used by {@link google.storagetransfer.v1.StorageTransferService|deleteAgentPool}.
+                 * Callback as used by {@link google.storagetransfer.v1.StorageTransferService#deleteAgentPool}.
                  * @param error Error, if any
                  * @param [response] Empty
                  */
@@ -6993,9 +6993,6 @@ export namespace google {
             /** FieldOptions lazy */
             lazy?: (boolean|null);
 
-            /** FieldOptions unverifiedLazy */
-            unverifiedLazy?: (boolean|null);
-
             /** FieldOptions deprecated */
             deprecated?: (boolean|null);
 
@@ -7032,9 +7029,6 @@ export namespace google {
 
             /** FieldOptions lazy. */
             public lazy: boolean;
-
-            /** FieldOptions unverifiedLazy. */
-            public unverifiedLazy: boolean;
 
             /** FieldOptions deprecated. */
             public deprecated: boolean;
@@ -8837,35 +8831,35 @@ export namespace google {
         namespace Operations {
 
             /**
-             * Callback as used by {@link google.longrunning.Operations|listOperations}.
+             * Callback as used by {@link google.longrunning.Operations#listOperations}.
              * @param error Error, if any
              * @param [response] ListOperationsResponse
              */
             type ListOperationsCallback = (error: (Error|null), response?: google.longrunning.ListOperationsResponse) => void;
 
             /**
-             * Callback as used by {@link google.longrunning.Operations|getOperation}.
+             * Callback as used by {@link google.longrunning.Operations#getOperation}.
              * @param error Error, if any
              * @param [response] Operation
              */
             type GetOperationCallback = (error: (Error|null), response?: google.longrunning.Operation) => void;
 
             /**
-             * Callback as used by {@link google.longrunning.Operations|deleteOperation}.
+             * Callback as used by {@link google.longrunning.Operations#deleteOperation}.
              * @param error Error, if any
              * @param [response] Empty
              */
             type DeleteOperationCallback = (error: (Error|null), response?: google.protobuf.Empty) => void;
 
             /**
-             * Callback as used by {@link google.longrunning.Operations|cancelOperation}.
+             * Callback as used by {@link google.longrunning.Operations#cancelOperation}.
              * @param error Error, if any
              * @param [response] Empty
              */
             type CancelOperationCallback = (error: (Error|null), response?: google.protobuf.Empty) => void;
 
             /**
-             * Callback as used by {@link google.longrunning.Operations|waitOperation}.
+             * Callback as used by {@link google.longrunning.Operations#waitOperation}.
              * @param error Error, if any
              * @param [response] Operation
              */
