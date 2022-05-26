@@ -49,14 +49,14 @@ describe('posix-request', () => {
   after(async () => {
     await testBucketManager.deleteBuckets();
     await testTransferJobManager.cleanUp();
-    await fs.rm(tempFile);
+    await fs.unlink(tempFile);
     await fs.rmdir(tempDirectory);
   });
 
   it('should create a transfer job from POSIX to GCS', async () => {
     console.log(
       'ggsa',
-      await testTransferJobManager.client.getGoogleServiceAccount()
+      await testTransferJobManager.client.getGoogleServiceAccount({projectId})
     );
 
     const output = await runSample('posix-request', [
