@@ -60,6 +60,12 @@ describe('posix-request', () => {
       gcsSinkBucket,
     ]);
 
+    // If it ran successfully and a job was created, delete it to clean up
+    const [jobName] = output.match(/transferJobs.*/);
+    if (jobName) {
+      testTransferJobManager.transferJobToCleanUp(jobName);
+    }
+
     // Find at least 1 transfer operation from the transfer job in the output
     assert.include(output, 'Created and ran a transfer job');
   });
