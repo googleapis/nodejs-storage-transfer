@@ -16,7 +16,7 @@
 
 'use strict';
 
-const fs = require('fs/promises');
+const fs = require('fs').promises;
 const os = require('os');
 const path = require('path');
 
