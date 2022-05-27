@@ -25,14 +25,16 @@ const {after, before, describe, it} = require('mocha');
 
 const {BucketManager, TransferJobManager, runSample} = require('./utils');
 
-describe('posix-request', () => {
+describe('posix-to-posix-request', () => {
   const testBucketManager = new BucketManager();
   const testTransferJobManager = new TransferJobManager();
 
   let projectId;
   let sourceAgentPoolName;
+  let sinkAgentPoolName;
   let rootDirectory;
-  let gcsSinkBucket;
+  let destinationDirectory;
+  let bucketName;
 
   let tempFile;
 
@@ -41,30 +43,38 @@ describe('posix-request', () => {
 
     // Use default pool
     sourceAgentPoolName = '';
+    sinkAgentPoolName = '';
 
     rootDirectory = await fs.mkdtemp(
-      path.join(os.tmpdir(), 'sts-posix-request-test-src-')
+      path.join(os.tmpdir(), 'sts-posix-to-posix-request-test-src-')
     );
     tempFile = path.join(rootDirectory, 'text.txt');
 
+    destinationDirectory = await fs.mkdtemp(
+      path.join(os.tmpdir(), 'sts-posix-to-posix-request-test-sink-')
+    );
+
     await fs.writeFile(tempFile, 'test data');
 
-    gcsSinkBucket = (await testBucketManager.generateGCSBucket()).name;
+    bucketName = (await testBucketManager.generateGCSBucket()).name;
   });
 
   after(async () => {
     await testBucketManager.deleteBuckets();
     await testTransferJobManager.cleanUp();
+
     await fs.unlink(tempFile);
     await fs.rmdir(rootDirectory);
   });
 
-  it('should create a transfer job from POSIX to GCS', async () => {
-    const output = await runSample('posix-request', [
+  it('should create a transfer job from POSIX to POSIX', async () => {
+    const output = await runSample('posix-to-posix-request', [
       projectId,
       sourceAgentPoolName,
+      sinkAgentPoolName,
       rootDirectory,
-      gcsSinkBucket,
+      destinationDirectory,
+      bucketName,
     ]);
 
     // If it ran successfully and a job was created, delete it to clean up

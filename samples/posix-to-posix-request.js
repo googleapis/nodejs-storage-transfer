@@ -19,10 +19,12 @@
 async function main(
   projectId = 'my-project',
   sourceAgentPoolName = '',
+  sinkAgentPoolName = '',
   rootDirectory = '',
-  gcsSinkBucket = ''
+  destinationDirectory = '',
+  bucketName = ''
 ) {
-  // [START storagetransfer_transfer_from_posix]
+  // [START storagetransfer_transfer_posix_to_posix]
 
   // Imports the Google Cloud client library
   const {
@@ -38,11 +40,17 @@ async function main(
   // The agent pool associated with the POSIX data source. Defaults to the default agent.
   // const sourceAgentPoolName = 'projects/my-project/agentPools/transfer_service_default'
 
+  // The agent pool associated with the POSIX data sink. Defaults to the default agent.
+  // const sinkAgentPoolName = 'projects/my-project/agentPools/transfer_service_default'
+
   // The root directory path on the source filesystem
   // const rootDirectory = '/directory/to/transfer/source',
 
-  // The ID of the GCS bucket to transfer data to
-  // const gcsSinkBucket = 'my-sink-bucket'
+  // The root directory path on the sink filesystem
+  // const destinationDirectory = '/directory/to/transfer/sink'
+
+  // The ID of the GCS bucket for intermediate storage The intermediate Cloud Storage intermediate data location.
+  // const bucketName = 'my-intermediate-bucket'
 
   // Creates a client
   const client = new StorageTransferServiceClient();
@@ -56,10 +64,16 @@ async function main(
         projectId,
         transferSpec: {
           sourceAgentPoolName,
+          sinkAgentPoolName,
           posixDataSource: {
             rootDirectory,
           },
-          gcsDataSink: {bucketName: gcsSinkBucket},
+          posixDataSink: {
+            rootDirectory: destinationDirectory,
+          },
+          gcsIntermediateDataLocation: {
+            bucketName,
+          },
         },
         status: 'ENABLED',
       },
@@ -76,12 +90,12 @@ async function main(
     await client.runTransferJob(runRequest);
 
     console.log(
-      `Created and ran a transfer job from '${rootDirectory}' to '${gcsSinkBucket}' with name ${transferJob.name}`
+      `Created and ran a transfer job from '${rootDirectory}' to '${destinationDirectory}' with name ${transferJob.name}`
     );
   }
 
   transferDirectory();
-  // [END storagetransfer_transfer_from_posix]
+  // [END storagetransfer_transfer_posix_to_posix]
 }
 
 main(...process.argv.slice(2));
