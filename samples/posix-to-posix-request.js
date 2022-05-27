@@ -37,10 +37,10 @@ async function main(
   // Your project id
   // const projectId = 'my-project'
 
-  // The agent pool associated with the POSIX data source. Defaults to the default agent.
+  // The agent pool associated with the POSIX data source. Defaults to the default agent
   // const sourceAgentPoolName = 'projects/my-project/agentPools/transfer_service_default'
 
-  // The agent pool associated with the POSIX data sink. Defaults to the default agent.
+  // The agent pool associated with the POSIX data sink. Defaults to the default agent
   // const sinkAgentPoolName = 'projects/my-project/agentPools/transfer_service_default'
 
   // The root directory path on the source filesystem
@@ -49,7 +49,7 @@ async function main(
   // The root directory path on the sink filesystem
   // const destinationDirectory = '/directory/to/transfer/sink'
 
-  // The ID of the GCS bucket for intermediate storage The intermediate Cloud Storage intermediate data location.
+  // The ID of the GCS bucket for intermediate storage
   // const bucketName = 'my-intermediate-bucket'
 
   // Creates a client

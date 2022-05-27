@@ -35,7 +35,7 @@ async function main(
   // Your project id
   // const projectId = 'my-project'
 
-  // The agent pool associated with the POSIX data source. Defaults to the default agent.
+  // The agent pool associated with the POSIX data source. Defaults to the default agent
   // const sourceAgentPoolName = 'projects/my-project/agentPools/transfer_service_default'
 
   // The root directory path on the source filesystem
