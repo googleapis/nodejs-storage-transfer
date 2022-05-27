@@ -54,11 +54,6 @@ describe('posix-request', () => {
   });
 
   it('should create a transfer job from POSIX to GCS', async () => {
-    console.log(
-      'ggsa',
-      await testTransferJobManager.client.getGoogleServiceAccount({projectId})
-    );
-
     const output = await runSample('posix-request', [
       projectId,
       tempDirectory,
