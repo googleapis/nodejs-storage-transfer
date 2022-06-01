@@ -48,15 +48,15 @@ describe('posix-to-posix-request', () => {
     rootDirectory = await fs.mkdtemp(
       path.join(os.tmpdir(), 'sts-posix-to-posix-request-test-src-')
     );
-    tempFile = path.join(rootDirectory, 'text.txt');
 
     destinationDirectory = await fs.mkdtemp(
       path.join(os.tmpdir(), 'sts-posix-to-posix-request-test-sink-')
     );
 
-    await fs.writeFile(tempFile, 'test data');
-
     bucketName = (await testBucketManager.generateGCSBucket()).name;
+
+    tempFile = path.join(rootDirectory, 'text.txt');
+    await fs.writeFile(tempFile, 'test data');
   });
 
   after(async () => {
