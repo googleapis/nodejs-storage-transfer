@@ -17,6 +17,7 @@
   * [Get-transfer-job-with-retries](#get-transfer-job-with-retries)
   * [Nearline-request](#nearline-request)
   * [Posix-request](#posix-request)
+  * [Posix-to-posix-request](#posix-to-posix-request)
   * [Quickstart](#quickstart)
   * [Transfer-check](#transfer-check)
 
@@ -113,6 +114,23 @@ __Usage:__
 
 
 `node samples/posix-request.js`
+
+
+-----
+
+
+
+
+### Posix-to-posix-request
+
+View the [source code](https://github.com/googleapis/nodejs-storage-transfer/blob/main/samples/posix-to-posix-request.js).
+
+[![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/nodejs-storage-transfer&page=editor&open_in_editor=samples/posix-to-posix-request.js,samples/README.md)
+
+__Usage:__
+
+
+`node samples/posix-to-posix-request.js`
 
 
 -----
