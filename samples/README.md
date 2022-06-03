@@ -16,6 +16,7 @@
   * [Check-latest-transfer-operation](#check-latest-transfer-operation)
   * [Get-transfer-job-with-retries](#get-transfer-job-with-retries)
   * [Nearline-request](#nearline-request)
+  * [Posix-download](#posix-download)
   * [Posix-request](#posix-request)
   * [Posix-to-posix-request](#posix-to-posix-request)
   * [Quickstart](#quickstart)
@@ -97,6 +98,23 @@ __Usage:__
 
 
 `node samples/nearline-request.js`
+
+
+-----
+
+
+
+
+### Posix-download
+
+View the [source code](https://github.com/googleapis/nodejs-storage-transfer/blob/main/samples/posix-download.js).
+
+[![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/nodejs-storage-transfer&page=editor&open_in_editor=samples/posix-download.js,samples/README.md)
+
+__Usage:__
+
+
+`node samples/posix-download.js`
 
 
 -----
