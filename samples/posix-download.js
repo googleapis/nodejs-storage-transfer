@@ -20,7 +20,7 @@ async function main(
   projectId = 'my-project',
   sinkAgentPoolName = '',
   gcsSourceBucket = '',
-  gcsSourceBucketPath = '',
+  gcsSourcePath = '',
   rootDirectory = ''
 ) {
   // [START storagetransfer_download_to_posix]
@@ -42,8 +42,8 @@ async function main(
   // Google Cloud Storage source bucket name
   // const gcsSourceBucket = 'my-gcs-source-bucket'
 
-  // An optional path to on the Google Cloud Storage bucket to download from
-  // const gcsSourceBucketPath = 'foo/bar/'
+  // An optional path on the Google Cloud Storage bucket to download from
+  // const gcsSourcePath = 'foo/bar/'
 
   // The root directory path on the source filesystem
   // const rootDirectory = '/directory/to/transfer/source',
@@ -62,7 +62,7 @@ async function main(
           sinkAgentPoolName,
           gcsDataSource: {
             bucketName: gcsSourceBucket,
-            path: gcsSourceBucketPath,
+            path: gcsSourcePath,
           },
           posixDataSink: {
             rootDirectory,
@@ -83,7 +83,7 @@ async function main(
     await client.runTransferJob(runRequest);
 
     console.log(
-      `Downloading from '${gcsSourceBucket}' (path: \`${gcsSourceBucketPath}\`) to '${rootDirectory}' with name ${transferJob.name}`
+      `Downloading from '${gcsSourceBucket}' (path: \`${gcsSourcePath}\`) to '${rootDirectory}' with name ${transferJob.name}`
     );
   }
 

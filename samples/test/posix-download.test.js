@@ -32,7 +32,7 @@ describe('posix-download', () => {
   let projectId;
   let sinkAgentPoolName;
   let gcsSourceBucket;
-  let gcsSourceBucketPath;
+  let gcsSourcePath;
   let rootDirectory;
 
   let tempObject;
@@ -51,7 +51,7 @@ describe('posix-download', () => {
     );
 
     // API requires path to end with '/'
-    gcsSourceBucketPath = rootDirectory + path.posix.sep;
+    gcsSourcePath = rootDirectory + path.posix.sep;
 
     tempObject = bucket.file(path.join(rootDirectory, 'text.txt'));
 
@@ -70,7 +70,7 @@ describe('posix-download', () => {
       projectId,
       sinkAgentPoolName,
       gcsSourceBucket,
-      gcsSourceBucketPath,
+      gcsSourcePath,
       rootDirectory,
     ]);
 
@@ -83,7 +83,7 @@ describe('posix-download', () => {
     // Find at least 1 transfer operation from the transfer job in the output
     assert.include(
       output,
-      `Downloading from '${gcsSourceBucket}' (path: \`${gcsSourceBucketPath}\`) to '${rootDirectory}'`
+      `Downloading from '${gcsSourceBucket}' (path: \`${gcsSourcePath}\`) to '${rootDirectory}'`
     );
   });
 });
