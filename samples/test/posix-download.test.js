@@ -50,7 +50,8 @@ describe('posix-download', () => {
       path.join(os.tmpdir(), 'sts-posix-download-test-sink-')
     );
 
-    gcsSourceBucketPath = rootDirectory;
+    // API requires path to end with '/'
+    gcsSourceBucketPath = rootDirectory + path.posix.sep;
 
     tempObject = bucket.file(path.join(rootDirectory, 'text.txt'));
 
