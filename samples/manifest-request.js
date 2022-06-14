@@ -83,7 +83,7 @@ async function main(
     await client.runTransferJob(runRequest);
 
     console.log(
-      `Created and ran a transfer job from '${rootDirectory}' to '${gcsSinkBucket}' using manifest `${}` with name ${transferJob.name}`
+      `Created and ran a transfer job from '${rootDirectory}' to '${gcsSinkBucket}' using manifest \`${manifestLocation}\` with name ${transferJob.name}`
     );
   }
 
