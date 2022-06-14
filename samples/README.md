@@ -15,6 +15,7 @@
   * [Aws-request](#aws-request)
   * [Check-latest-transfer-operation](#check-latest-transfer-operation)
   * [Get-transfer-job-with-retries](#get-transfer-job-with-retries)
+  * [Manifest-request](#manifest-request)
   * [Nearline-request](#nearline-request)
   * [Posix-download](#posix-download)
   * [Posix-request](#posix-request)
@@ -81,6 +82,23 @@ __Usage:__
 
 
 `node samples/get-transfer-job-with-retries.js`
+
+
+-----
+
+
+
+
+### Manifest-request
+
+View the [source code](https://github.com/googleapis/nodejs-storage-transfer/blob/main/samples/manifest-request.js).
+
+[![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/nodejs-storage-transfer&page=editor&open_in_editor=samples/manifest-request.js,samples/README.md)
+
+__Usage:__
+
+
+`node samples/manifest-request.js`
 
 
 -----
