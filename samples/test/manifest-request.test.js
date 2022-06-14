@@ -56,7 +56,7 @@ describe('manifest-request', () => {
     await fs.writeFile(tempFile, 'test data');
 
     // Double-quote to escape double-quotes in CSV text
-    const csvContent = `"${tempFile.replaceAll('"', '""')}"`;
+    const csvContent = `"${tempFile.replace(/"/g, '""')}"`;
 
     tempManifestObject = bucket.file('manifest.csv');
     await tempManifestObject.save(csvContent);
