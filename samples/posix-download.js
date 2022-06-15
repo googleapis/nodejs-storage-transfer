@@ -46,7 +46,7 @@ async function main(
   // const gcsSourcePath = 'foo/bar/'
 
   // The root directory path on the source filesystem
-  // const rootDirectory = '/directory/to/transfer/source',
+  // const rootDirectory = '/directory/to/transfer/source'
 
   // Creates a client
   const client = new StorageTransferServiceClient();
@@ -54,7 +54,7 @@ async function main(
   /**
    * Creates a request to transfer from the local file system to the sink bucket
    */
-  async function transferDirectory() {
+  async function downloadFromGCS() {
     const createRequest = {
       transferJob: {
         projectId,
@@ -87,7 +87,7 @@ async function main(
     );
   }
 
-  transferDirectory();
+  downloadFromGCS();
   // [END storagetransfer_download_to_posix]
 }
 
