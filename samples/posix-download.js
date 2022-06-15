@@ -45,8 +45,8 @@ async function main(
   // An optional path on the Google Cloud Storage bucket to download from
   // const gcsSourcePath = 'foo/bar/'
 
-  // The root directory path on the source filesystem
-  // const rootDirectory = '/directory/to/transfer/source'
+  // The root directory path on the destination filesystem
+  // const rootDirectory = '/directory/to/transfer/sink'
 
   // Creates a client
   const client = new StorageTransferServiceClient();
