@@ -27,10 +27,14 @@ const path = require('path');
  * @returns {string} output of the command
  */
 async function runSample(sample, args = []) {
-  return execFileSync('node', [`${sample}.js`, ...args], {
+  let results = '';
+
+  results = execFileSync('node', [`${sample}.js`, ...args], {
     encoding: 'utf-8',
     cwd: path.join(__dirname, '..', '..'),
   });
+
+  return results;
 }
 
 module.exports = {
