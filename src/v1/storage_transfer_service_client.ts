@@ -497,7 +497,7 @@ export class StorageTransferServiceClient {
     options.otherArgs.headers = options.otherArgs.headers || {};
     options.otherArgs.headers['x-goog-request-params'] =
       this._gaxModule.routingHeader.fromParams({
-        project_id: request.projectId || '',
+        project_id: request.projectId ?? '',
       });
     this.initialize();
     return this.innerApiCalls.getGoogleServiceAccount(
@@ -711,7 +711,7 @@ export class StorageTransferServiceClient {
     options.otherArgs.headers = options.otherArgs.headers || {};
     options.otherArgs.headers['x-goog-request-params'] =
       this._gaxModule.routingHeader.fromParams({
-        job_name: request.jobName || '',
+        job_name: request.jobName ?? '',
       });
     this.initialize();
     return this.innerApiCalls.updateTransferJob(request, options, callback);
@@ -805,7 +805,7 @@ export class StorageTransferServiceClient {
     options.otherArgs.headers = options.otherArgs.headers || {};
     options.otherArgs.headers['x-goog-request-params'] =
       this._gaxModule.routingHeader.fromParams({
-        job_name: request.jobName || '',
+        job_name: request.jobName ?? '',
       });
     this.initialize();
     return this.innerApiCalls.getTransferJob(request, options, callback);
@@ -902,7 +902,7 @@ export class StorageTransferServiceClient {
     options.otherArgs.headers = options.otherArgs.headers || {};
     options.otherArgs.headers['x-goog-request-params'] =
       this._gaxModule.routingHeader.fromParams({
-        name: request.name || '',
+        name: request.name ?? '',
       });
     this.initialize();
     return this.innerApiCalls.pauseTransferOperation(
@@ -1003,7 +1003,7 @@ export class StorageTransferServiceClient {
     options.otherArgs.headers = options.otherArgs.headers || {};
     options.otherArgs.headers['x-goog-request-params'] =
       this._gaxModule.routingHeader.fromParams({
-        name: request.name || '',
+        name: request.name ?? '',
       });
     this.initialize();
     return this.innerApiCalls.resumeTransferOperation(
@@ -1102,7 +1102,7 @@ export class StorageTransferServiceClient {
     options.otherArgs.headers = options.otherArgs.headers || {};
     options.otherArgs.headers['x-goog-request-params'] =
       this._gaxModule.routingHeader.fromParams({
-        job_name: request.jobName || '',
+        job_name: request.jobName ?? '',
       });
     this.initialize();
     return this.innerApiCalls.deleteTransferJob(request, options, callback);
@@ -1210,7 +1210,7 @@ export class StorageTransferServiceClient {
     options.otherArgs.headers = options.otherArgs.headers || {};
     options.otherArgs.headers['x-goog-request-params'] =
       this._gaxModule.routingHeader.fromParams({
-        project_id: request.projectId || '',
+        project_id: request.projectId ?? '',
       });
     this.initialize();
     return this.innerApiCalls.createAgentPool(request, options, callback);
@@ -1319,7 +1319,7 @@ export class StorageTransferServiceClient {
     options.otherArgs.headers = options.otherArgs.headers || {};
     options.otherArgs.headers['x-goog-request-params'] =
       this._gaxModule.routingHeader.fromParams({
-        'agent_pool.name': request.agentPool!.name || '',
+        'agent_pool.name': request.agentPool!.name ?? '',
       });
     this.initialize();
     return this.innerApiCalls.updateAgentPool(request, options, callback);
@@ -1404,7 +1404,7 @@ export class StorageTransferServiceClient {
     options.otherArgs.headers = options.otherArgs.headers || {};
     options.otherArgs.headers['x-goog-request-params'] =
       this._gaxModule.routingHeader.fromParams({
-        name: request.name || '',
+        name: request.name ?? '',
       });
     this.initialize();
     return this.innerApiCalls.getAgentPool(request, options, callback);
@@ -1495,7 +1495,7 @@ export class StorageTransferServiceClient {
     options.otherArgs.headers = options.otherArgs.headers || {};
     options.otherArgs.headers['x-goog-request-params'] =
       this._gaxModule.routingHeader.fromParams({
-        name: request.name || '',
+        name: request.name ?? '',
       });
     this.initialize();
     return this.innerApiCalls.deleteAgentPool(request, options, callback);
@@ -1604,7 +1604,7 @@ export class StorageTransferServiceClient {
     options.otherArgs.headers = options.otherArgs.headers || {};
     options.otherArgs.headers['x-goog-request-params'] =
       this._gaxModule.routingHeader.fromParams({
-        job_name: request.jobName || '',
+        job_name: request.jobName ?? '',
       });
     this.initialize();
     return this.innerApiCalls.runTransferJob(request, options, callback);
@@ -1956,7 +1956,7 @@ export class StorageTransferServiceClient {
     options.otherArgs.headers = options.otherArgs.headers || {};
     options.otherArgs.headers['x-goog-request-params'] =
       this._gaxModule.routingHeader.fromParams({
-        project_id: request.projectId || '',
+        project_id: request.projectId ?? '',
       });
     this.initialize();
     return this.innerApiCalls.listAgentPools(request, options, callback);
@@ -2003,7 +2003,7 @@ export class StorageTransferServiceClient {
     options.otherArgs.headers = options.otherArgs.headers || {};
     options.otherArgs.headers['x-goog-request-params'] =
       this._gaxModule.routingHeader.fromParams({
-        project_id: request.projectId || '',
+        project_id: request.projectId ?? '',
       });
     const defaultCallSettings = this._defaults['listAgentPools'];
     const callSettings = defaultCallSettings.merge(options);
@@ -2059,7 +2059,7 @@ export class StorageTransferServiceClient {
     options.otherArgs.headers = options.otherArgs.headers || {};
     options.otherArgs.headers['x-goog-request-params'] =
       this._gaxModule.routingHeader.fromParams({
-        project_id: request.projectId || '',
+        project_id: request.projectId ?? '',
       });
     const defaultCallSettings = this._defaults['listAgentPools'];
     const callSettings = defaultCallSettings.merge(options);
