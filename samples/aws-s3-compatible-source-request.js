@@ -81,7 +81,7 @@ async function main(
   const client = new storageTransfer.StorageTransferServiceClient();
 
   /**
-   * Creates a request to transfer from the local file system to the sink bucket
+   * Creates a request from an AWS S3-compatible source to GCS
    */
   async function transferFromS3CompatibleSource() {
     // Runs the request and creates the job
@@ -110,12 +110,10 @@ async function main(
       },
     });
 
-    const runRequest = {
+    await client.runTransferJob({
       jobName: transferJob.name,
-      projectId: projectId,
-    };
-
-    await client.runTransferJob(runRequest);
+      projectId,
+    });
 
     console.log(
       `Created and ran a transfer job from '${sourceBucketName}' to '${gcsSinkBucket}' with name ${transferJob.name}`
