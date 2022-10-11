@@ -81,7 +81,7 @@ async function main(
   const client = new storageTransfer.StorageTransferServiceClient();
 
   /**
-   * Creates a request from an AWS S3-compatible source to GCS
+   * Creates a transfer from an AWS S3-compatible source to GCS
    */
   async function transferFromS3CompatibleSource() {
     // Runs the request and creates the job
