@@ -18,3 +18,9 @@
 export STS_AWS_SECRET=`gcloud secrets versions access latest --project cloud-devrel-kokoro-resources --secret=nodejs-storagetransfer-aws`
 export AWS_ACCESS_KEY_ID=`S="$STS_AWS_SECRET" node -p "JSON.parse(process.env.S).AccessKeyId"`
 export AWS_SECRET_ACCESS_KEY=`S="$STS_AWS_SECRET" node -p "JSON.parse(process.env.S).SecretAccessKey"`
+
+# Import secrets for Azure integration testing.
+export STS_AZURE_SECRET=`gcloud secrets versions access latest --project cloud-devrel-kokoro-resources --secret=nodejs-storagetransfer-azure`
+export AZURE_STORAGE_ACCOUNT=`S="$STS_AZURE_SECRET" node -p "JSON.parse(process.env.S).StorageAccount"`
+export AZURE_CONNECTION_STRING=`S="$STS_AZURE_SECRET" node -p "JSON.parse(process.env.S).ConnectionString"`
+export AZURE_SAS_TOKEN=`S="$STS_AZURE_SECRET" node -p "JSON.parse(process.env.S).SAS"`
