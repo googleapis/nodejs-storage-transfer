@@ -46,7 +46,7 @@ async function main(
   // Azure Storage Account name
   // azureSourceContainer = 'my-s3-source-bucket'
 
-  // Azure SAS Token
+  // Azure Shared Access Signature token
   // azureSASToken = '?sv=...'
 
   // Google Cloud Storage destination bucket name
