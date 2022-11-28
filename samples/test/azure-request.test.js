@@ -64,8 +64,8 @@ describe('azure-request', () => {
     await testTransferJobManager.cleanUp();
   });
 
-  it('should create a transfer job from S3 to GCS', async () => {
-    const output = await runSample('aws-request', [
+  it('should create a transfer job from Azure to GCS', async () => {
+    const output = await runSample('azure-request', [
       projectId,
       description,
       azureStorageAccount,
