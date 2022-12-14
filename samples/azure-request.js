@@ -44,7 +44,7 @@ async function main(
   // azureStorageAccount = 'accountname'
 
   // Azure Storage Account name
-  // azureSourceContainer = 'my-s3-source-bucket'
+  // azureSourceContainer = 'my-azure-source-bucket'
 
   // Azure Shared Access Signature token
   // azureSASToken = '?sv=...'
